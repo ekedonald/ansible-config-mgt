@@ -40,3 +40,9 @@
 - name: Configure Apache.
   include_tasks: "configure-{{ ansible_os_family }}.yml"
 
+- name: Ensure Apache has selected state and enabled on boot.
+  command: systemctl status apache2
+  register: foo
+
+- debug:
+    var: foo
