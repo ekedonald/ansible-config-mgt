@@ -1,4 +1,4 @@
-- hosts: lb
+- hosts: webservers
   become: true
   roles:
     - { role: roles/nginx, when: enable_nginx_lb and load_balancer_is_required }
