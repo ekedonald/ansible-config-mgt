@@ -50,7 +50,7 @@ apache_mods_disabled: []
 apache_state: started
 
 # Set initial apache service status. Recommended values: `yes` or `no`
-apache_enabled: no
+apache_enabled: yes
 
 # Set apache state when configuration changes are made. Recommended values:
 # `restarted` or `reloaded`
@@ -60,5 +60,5 @@ apache_restart_state: restarted
 # if you want to upgrade or switch versions using a new repo.
 apache_packages_state: present
 
-load_balancer_is_required: false
-enable_apache_lb: false
+load_balancer_is_required: true
+enable_apache_lb: true
