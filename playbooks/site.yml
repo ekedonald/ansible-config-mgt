@@ -1,5 +1,6 @@
 ---
 - hosts: all
+<<<<<<< HEAD
   become: true
   
 - name: Include Dynamic Variables
@@ -13,3 +14,7 @@
 - name: Loadbalancers assignment
   import_playbook: ../static-assignments/loadbalancers.yml
   when: load_balancer_is_required
+=======
+- import_playbook: ../static-assignments/common.yml
+- import_playbook: ../static-assignments/uat-webservers.yml
+>>>>>>> parent of 5cbdb14 (updates)
