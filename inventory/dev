@@ -10,3 +10,12 @@
 
 [lb]
 3.88.35.136 ansible_ssh_user='ubuntu'
+
+[all: children]
+nfs
+webservers
+db
+lb
+
+[all: vars]
+host_key_checking=false
