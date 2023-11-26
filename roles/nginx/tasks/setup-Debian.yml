@@ -1,5 +1,6 @@
 ---
-- name: Ensure nginx is installed.
+- become: true
+  name: Ensure nginx is installed.
   apt:
     name: "{{ nginx_package_name }}"
     state: present
