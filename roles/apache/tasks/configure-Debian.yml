@@ -17,6 +17,7 @@
     mode: 0644
   with_items: "{{ apache_mods_enabled }}"
   notify: restart apache
+  become: true
 
 - name: Disable Apache mods.
   file:
@@ -24,6 +25,7 @@
     state: absent
   with_items: "{{ apache_mods_disabled }}"
   notify: restart apache
+  become: true
 
 - name: Check whether certificates defined in vhosts exist.
   stat: "path={{ item.certificate_file }}"
