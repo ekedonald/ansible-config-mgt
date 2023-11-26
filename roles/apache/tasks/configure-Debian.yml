@@ -25,7 +25,7 @@
     state: absent
   with_items: "{{ apache_mods_disabled }}"
   notify: restart apache
-  become: true
+  #become: true
 
 - name: Check whether certificates defined in vhosts exist.
   stat: "path={{ item.certificate_file }}"
@@ -41,6 +41,7 @@
     mode: 0644
   notify: restart apache
   when: apache_create_vhosts | bool
+  #become: true
 
 - name: Add vhost symlink in sites-enabled.
   file:
@@ -50,6 +51,7 @@
     mode: 0644
   notify: restart apache
   when: apache_create_vhosts | bool
+  #become: true
 
 - name: Remove default vhost in sites-enabled.
   file:
@@ -57,3 +59,4 @@
     state: absent
   notify: restart apache
   when: apache_remove_default_vhost
+  #become: true
