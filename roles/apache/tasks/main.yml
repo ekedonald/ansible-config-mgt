@@ -36,8 +36,3 @@
   include_vars: apache-24.yml
   when: "apache_version.split('.')[1] == '4'"
 
-# Configure Apache.
-- name: Configure Apache.
-  include_tasks: configure-RedHat.yml
-
-# 
