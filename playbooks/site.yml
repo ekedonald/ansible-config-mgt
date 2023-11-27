@@ -3,3 +3,8 @@
   become: true
   name: Import Dynamic Variables
 - import_playbook: ../dynamic-assignments/env-vars.yml
+
+- name: Loadbalancers assignment
+  hosts: lb
+- import_playbook: ../static-assignments/loadbalancers.yml
+  when: load_balancer_is_required 
