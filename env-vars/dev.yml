@@ -1,4 +1,4 @@
-enable_nginx_lb: false
+enable_nginx_lb: true
 enable_apache_lb: false
-enable_mysql_lb: true
+enable_mysql_lb: false
 load_balancer_is_required: true
